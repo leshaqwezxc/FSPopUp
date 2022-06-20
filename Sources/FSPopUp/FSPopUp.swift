@@ -37,6 +37,8 @@ public struct FSPopUpConfiguration {
     public var cornerRadius: CGFloat = 12
     public var stackConfiguration: FSPopUpStackViewConfiguration = .init()
     public var isDismissOnSwipe: Bool = true
+    
+    public init() {}
 }
 
 final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController where Template.State == State {
