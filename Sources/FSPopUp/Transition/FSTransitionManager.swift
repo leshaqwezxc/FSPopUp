@@ -34,7 +34,6 @@ final internal class FSInteractiveTransition: UIPercentDrivenInteractiveTransiti
 }
 
 extension FSInteractiveTransition {
-    
     func calculateProgress(sender: UIPanGestureRecognizer) -> CGFloat? {
         guard let vc = viewController else { return nil }
 

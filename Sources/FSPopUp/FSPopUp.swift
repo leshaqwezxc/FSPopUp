@@ -31,7 +31,7 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
     
     // MARK: - Nested types
 
-    struct Configuration {
+    public struct Configuration {
         var width: FSPopUpSizeType = .constant(300)
         var height: FSPopUpSizeType = .auto
         var position: FSPopUpPosition = .center(offset: 0)
@@ -61,7 +61,7 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
     
     // MARK: - Initialiser
     
-    init(viewController: UIViewController, buttonTemplate: Template.Type, configuration: Configuration, actions: [FSPopUpAction<State>]) {
+    public init(viewController: UIViewController, buttonTemplate: Template.Type, configuration: Configuration, actions: [FSPopUpAction<State>]) {
         self.viewController = viewController
         self.configuration = configuration
         self.actions = actions
