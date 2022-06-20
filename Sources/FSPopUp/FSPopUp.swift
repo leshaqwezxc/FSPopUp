@@ -27,21 +27,21 @@ public struct FSPopUpAction<T> {
     let handler: (() -> Void)
 }
 
+public struct FSPopUpConfiguration {
+    var width: FSPopUpSizeType = .constant(300)
+    var height: FSPopUpSizeType = .auto
+    var position: FSPopUpPosition = .center(offset: 0)
+    var blur: UIBlurEffect? = nil
+    var backgroundColor: UIColor? = nil
+    var transitionStyle: FSPopUpTransitionStyle = .bounceUp
+    var cornerRadius: CGFloat = 12
+    var stackConfiguration: FSPopUpStackViewConfiguration = .init()
+    var isDismissOnSwipe: Bool = true
+}
+
 final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController where Template.State == State {
     
     // MARK: - Nested types
-
-    public struct Configuration {
-        var width: FSPopUpSizeType = .constant(300)
-        var height: FSPopUpSizeType = .auto
-        var position: FSPopUpPosition = .center(offset: 0)
-        var blur: UIBlurEffect? = nil
-        var backgroundColor: UIColor? = nil
-        var transitionStyle: FSPopUpTransitionStyle = .bounceUp
-        var cornerRadius: CGFloat = 12
-        var stackConfiguration: FSPopUpStackViewConfiguration = .init()
-        var isDismissOnSwipe: Bool = true
-    }
     
     // MARK: - Private properties
     
@@ -56,12 +56,12 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
     
     fileprivate var presentationManager: FSPresentationManager
     
-    private let configuration: Configuration
+    private let configuration: FSPopUpConfiguration
     fileprivate var buttons = [FSPopUpButton]()
     
     // MARK: - Initialiser
     
-    public init(viewController: UIViewController, buttonTemplate: Template.Type, configuration: Configuration, actions: [FSPopUpAction<State>]) {
+    public init(viewController: UIViewController, buttonTemplate: Template.Type, configuration: FSPopUpConfiguration, actions: [FSPopUpAction<State>]) {
         self.viewController = viewController
         self.configuration = configuration
         self.actions = actions
