@@ -28,15 +28,15 @@ public struct FSPopUpAction<T> {
 }
 
 public struct FSPopUpConfiguration {
-    var width: FSPopUpSizeType = .constant(300)
-    var height: FSPopUpSizeType = .auto
-    var position: FSPopUpPosition = .center(offset: 0)
-    var blur: UIBlurEffect? = nil
-    var backgroundColor: UIColor? = nil
-    var transitionStyle: FSPopUpTransitionStyle = .bounceUp
-    var cornerRadius: CGFloat = 12
-    var stackConfiguration: FSPopUpStackViewConfiguration = .init()
-    var isDismissOnSwipe: Bool = true
+    public var width: FSPopUpSizeType = .constant(300)
+    public var height: FSPopUpSizeType = .auto
+    public var position: FSPopUpPosition = .center(offset: 0)
+    public var blur: UIBlurEffect? = nil
+    public var backgroundColor: UIColor? = nil
+    public var transitionStyle: FSPopUpTransitionStyle = .bounceUp
+    public var cornerRadius: CGFloat = 12
+    public var stackConfiguration: FSPopUpStackViewConfiguration = .init()
+    public var isDismissOnSwipe: Bool = true
 }
 
 final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController where Template.State == State {

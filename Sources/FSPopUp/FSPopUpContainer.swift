@@ -1,12 +1,12 @@
 import UIKit
 
 public struct FSPopUpStackViewConfiguration {
-    var axis: NSLayoutConstraint.Axis = .vertical
-    var spacing: CGFloat = -1
-    var alignment: UIStackView.Alignment = .fill
-    var itemHeight: CGFloat = 40
-    var verticalPadding: CGFloat = -1
-    var horizontalPadding: CGFloat = -1
+    public var axis: NSLayoutConstraint.Axis = .vertical
+    public var spacing: CGFloat = -1
+    public var alignment: UIStackView.Alignment = .fill
+    public var itemHeight: CGFloat = 40
+    public var verticalPadding: CGFloat = -1
+    public var horizontalPadding: CGFloat = -1
 }
 
 final class PopUpContainerView: UIView {
