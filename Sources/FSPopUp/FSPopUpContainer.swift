@@ -1,6 +1,6 @@
 import UIKit
 
-struct FSPopUpStackViewConfiguration {
+public struct FSPopUpStackViewConfiguration {
     var axis: NSLayoutConstraint.Axis = .vertical
     var spacing: CGFloat = -1
     var alignment: UIStackView.Alignment = .fill

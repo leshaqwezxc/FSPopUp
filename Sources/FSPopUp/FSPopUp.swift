@@ -1,33 +1,33 @@
 import UIKit
 
-protocol FSStateSetuping {
+public protocol FSStateSetuping {
     associatedtype State
     func setup(with state: State)
 }
 
-enum FSPopUpPosition {
+public enum FSPopUpPosition {
     case top(offset: CGFloat)
     case center(offset: CGFloat)
     case bottom(offset: CGFloat)
 }
 
-enum FSPopUpSizeType {
+public enum FSPopUpSizeType {
     case constant(CGFloat)
     case ratio(CGFloat)
     case auto
 }
 
-enum FSPopUpButtonAlignment {
+public enum FSPopUpButtonAlignment {
     case vertical
     case horizontal
 }
 
-struct FSPopUpAction<T> {
+public struct FSPopUpAction<T> {
     let state: T
     let handler: (() -> Void)
 }
 
-final class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController where Template.State == State {
+final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController where Template.State == State {
     
     // MARK: - Nested types
 
@@ -103,7 +103,7 @@ final class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController
         configureGestures()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    public override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
         print("viewWillAppear")
    }

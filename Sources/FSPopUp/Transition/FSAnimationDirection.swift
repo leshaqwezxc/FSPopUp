@@ -6,7 +6,7 @@
 //
 
 import Foundation
-enum FSAnimationDirection {
+public enum FSAnimationDirection {
     case presenting
     case dismissing
 }
