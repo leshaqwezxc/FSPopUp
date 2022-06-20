@@ -40,7 +40,7 @@ class FSTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     }
 }
 
-enum FSPopUpTransitionStyle: Int {
+public enum FSPopUpTransitionStyle: Int {
     case bounceUp
     case bounceDown
     case zoomIn
