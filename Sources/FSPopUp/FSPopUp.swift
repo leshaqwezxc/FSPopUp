@@ -43,7 +43,25 @@ public struct FSPopUpConfiguration {
     public var stackConfiguration: FSPopUpStackViewConfiguration = .init()
     public var isDismissOnSwipe: Bool = true
     
-    public init() {}
+    public init(width: FSPopUpSizeType = .constant(300),
+                height: FSPopUpSizeType = .auto,
+                position: FSPopUpPosition = .center(offset: 0),
+                blur: UIBlurEffect? = nil,
+                backgroundColor: UIColor? = .black.withAlphaComponent(0.6),
+                transitionStyle: FSPopUpTransitionStyle = .fadeIn,
+                cornerRadius: CGFloat = 12,
+                stackConfiguration: FSPopUpStackViewConfiguration = .init(),
+                isDismissOnSwipe: Bool = true ) {
+        self.width = width
+        self.height = height
+        self.position = position
+        self.blur = blur
+        self.backgroundColor = backgroundColor
+        self.transitionStyle = transitionStyle
+        self.cornerRadius = cornerRadius
+        self.stackConfiguration = stackConfiguration
+        self.isDismissOnSwipe = isDismissOnSwipe
+    }
 }
 
 final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewController where Template.State == State {
