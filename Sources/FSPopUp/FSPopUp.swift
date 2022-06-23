@@ -23,8 +23,8 @@ public enum FSPopUpButtonAlignment {
 }
 
 public struct FSPopUpAction<T> {
-    let state: T
-    let handler: (() -> Void)
+    public let state: T
+    public let handler: (() -> Void)
 }
 
 public struct FSPopUpConfiguration {
