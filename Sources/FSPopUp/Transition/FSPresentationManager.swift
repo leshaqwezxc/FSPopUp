@@ -2,12 +2,12 @@ import UIKit
 
 final internal class FSPresentationManager: NSObject, UIViewControllerTransitioningDelegate {
 
-    var transitionStyle: FSPopupDialogTransitionStyle
+    var transitionStyle: FSPopUpTransitionStyle
     var interactor: FSInteractiveTransition
     var backgroundColor: UIColor?
     var blur: UIBlurEffect?
 
-    init(transitionStyle: FSPopupDialogTransitionStyle, interactor: FSInteractiveTransition, backgroundColor: UIColor?, blur: UIBlurEffect?) {
+    init(transitionStyle: FSPopUpTransitionStyle, interactor: FSInteractiveTransition, backgroundColor: UIColor?, blur: UIBlurEffect?) {
         self.transitionStyle = transitionStyle
         self.interactor = interactor
         self.backgroundColor = backgroundColor
@@ -21,7 +21,7 @@ final internal class FSPresentationManager: NSObject, UIViewControllerTransition
     }
 
     func animationController(forPresented presented: UIViewController, presenting: UIViewController, source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
-        var transition: TransitionAnimator
+        var transition: FSTransitionAnimator
         switch transitionStyle {
         case .bounceUp:
             transition = BounceUpTransition(direction: .presenting)
@@ -42,7 +42,7 @@ final internal class FSPresentationManager: NSObject, UIViewControllerTransition
             return DismissInteractiveTransition()
         }
 
-        var transition: TransitionAnimator
+        var transition: FSTransitionAnimator
         switch transitionStyle {
         case .bounceUp:
             transition = BounceUpTransition(direction: .dismissing)
@@ -64,10 +64,10 @@ final internal class FSPresentationManager: NSObject, UIViewControllerTransition
 
 final internal class PresentationController: UIPresentationController {
 
-    private let overlay: PopupOverlayView
+    private let overlay: FSPopupOverlayView
     
     init(presentedViewController: UIViewController, presenting presentingViewController: UIViewController?, backgroundColor: UIColor?, blur: UIBlurEffect?) {
-        overlay = PopupOverlayView(backgroundColor: backgroundColor, blur: blur)
+        overlay = FSPopupOverlayView(backgroundColor: backgroundColor, blur: blur)
         super.init(presentedViewController: presentedViewController, presenting: presentingViewController)
     }
 

@@ -7,6 +7,8 @@ public struct FSPopUpStackViewConfiguration {
     public var itemHeight: CGFloat = 40
     public var verticalPadding: CGFloat = -1
     public var horizontalPadding: CGFloat = -1
+    
+    public init() {}
 }
 
 final class PopUpContainerView: UIView {

@@ -8,7 +8,7 @@ class FSTransitionAnimator: NSObject, UIViewControllerAnimatedTransitioning {
     let outDuration: TimeInterval
     let direction: FSAnimationDirection
 
-    init(inDuration: TimeInterval, outDuration: TimeInterval, direction: AnimationDirection) {
+    init(inDuration: TimeInterval, outDuration: TimeInterval, direction: FSAnimationDirection) {
         self.inDuration = inDuration
         self.outDuration = outDuration
         self.direction = direction
@@ -47,9 +47,9 @@ public enum FSPopUpTransitionStyle: Int {
     case fadeIn
 }
 
-final internal class BounceUpTransition: TransitionAnimator {
+final internal class BounceUpTransition: FSTransitionAnimator {
 
-    init(direction: AnimationDirection) {
+    init(direction: FSAnimationDirection) {
         super.init(inDuration: 0.22, outDuration: 0.2, direction: direction)
     }
 
@@ -77,9 +77,9 @@ final internal class BounceUpTransition: TransitionAnimator {
     }
 }
 
-final internal class BounceDownTransition: TransitionAnimator {
+final internal class BounceDownTransition: FSTransitionAnimator {
 
-    init(direction: AnimationDirection) {
+    init(direction: FSAnimationDirection) {
         super.init(inDuration: 0.22, outDuration: 0.2, direction: direction)
     }
 
@@ -107,9 +107,9 @@ final internal class BounceDownTransition: TransitionAnimator {
     }
 }
 
-final internal class ZoomTransition: TransitionAnimator {
+final internal class ZoomTransition: FSTransitionAnimator {
 
-    init(direction: AnimationDirection) {
+    init(direction: FSAnimationDirection) {
         super.init(inDuration: 0.22, outDuration: 0.2, direction: direction)
     }
 
@@ -137,9 +137,9 @@ final internal class ZoomTransition: TransitionAnimator {
     }
 }
 
-final internal class FadeTransition: TransitionAnimator {
+final internal class FadeTransition: FSTransitionAnimator {
 
-    init(direction: AnimationDirection) {
+    init(direction: FSAnimationDirection) {
         super.init(inDuration: 0.22, outDuration: 0.2, direction: direction)
     }
 
@@ -168,7 +168,7 @@ final internal class FadeTransition: TransitionAnimator {
 }
 
 /// Used for the always drop out animation with pan gesture dismissal
-final internal class DismissInteractiveTransition: TransitionAnimator {
+final internal class DismissInteractiveTransition: FSTransitionAnimator {
 
     init() {
         super.init(inDuration: 0.22, outDuration: 0.32, direction: .dismissing)

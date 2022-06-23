@@ -56,7 +56,7 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
     
     private let viewController: UIViewController
     
-    fileprivate var presentationManager: FSPresentationManager
+    fileprivate var presentationManager: FSPresentationManager!
     
     private let configuration: FSPopUpConfiguration
     fileprivate var buttons = [FSPopUpButton]()
@@ -70,12 +70,11 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
         self.buttonTemplate = buttonTemplate
         self.contentView = viewController.view
         super.init(nibName: nil, bundle: nil)
-        
-        presentationManager = FSPresentationManager(transitionStyle: configuration.transitionStyle, interactor: interactor, backgroundColor: configuration.backgroundColor, blur: configuration.blur)
         transitioningDelegate = presentationManager
         modalPresentationStyle = .custom
         
         interactor.viewController = self
+        self.presentationManager = FSPresentationManager(transitionStyle: configuration.transitionStyle, interactor: interactor, backgroundColor: configuration.backgroundColor, blur: configuration.blur)
         
         modalPresentationCapturesStatusBarAppearance = true
         addChild(viewController)
@@ -175,4 +174,3 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
         }
     }
 }
-
