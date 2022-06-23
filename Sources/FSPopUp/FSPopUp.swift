@@ -96,8 +96,8 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
         transitioningDelegate = presentationManager
         modalPresentationStyle = .custom
         
-        interactor.viewController = self
         self.presentationManager = FSPresentationManager(transitionStyle: configuration.transitionStyle, interactor: interactor, backgroundColor: configuration.backgroundColor, blur: configuration.blur)
+        interactor.viewController = self
         
         modalPresentationCapturesStatusBarAppearance = true
         addChild(viewController)
