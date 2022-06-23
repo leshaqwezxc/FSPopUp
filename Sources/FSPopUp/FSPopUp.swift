@@ -33,15 +33,15 @@ public struct FSPopUpAction<T> {
 }
 
 public struct FSPopUpConfiguration {
-    public var width: FSPopUpSizeType = .constant(300)
-    public var height: FSPopUpSizeType = .auto
-    public var position: FSPopUpPosition = .center(offset: 0)
-    public var blur: UIBlurEffect? = nil
-    public var backgroundColor: UIColor? = nil
-    public var transitionStyle: FSPopUpTransitionStyle = .bounceUp
-    public var cornerRadius: CGFloat = 12
-    public var stackConfiguration: FSPopUpStackViewConfiguration = .init()
-    public var isDismissOnSwipe: Bool = true
+    public let width: FSPopUpSizeType
+    public let height: FSPopUpSizeType
+    public let position: FSPopUpPosition
+    public let blur: UIBlurEffect?
+    public let backgroundColor: UIColor?
+    public let transitionStyle: FSPopUpTransitionStyle
+    public let cornerRadius: CGFloat
+    public let stackConfiguration: FSPopUpStackViewConfiguration
+    public let isDismissOnSwipe: Bool
     
     public init(width: FSPopUpSizeType = .constant(300),
                 height: FSPopUpSizeType = .auto,
