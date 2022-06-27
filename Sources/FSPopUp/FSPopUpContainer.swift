@@ -69,6 +69,9 @@ final class PopUpContainerView: UIView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 1),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
+        buttons.forEach {
+            buttonsStackView.addArrangedSubview($0)
+        }
         
         buttonsStackView.axis = configuration.axis
         buttonsStackView.spacing = configuration.spacing
