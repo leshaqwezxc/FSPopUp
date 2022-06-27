@@ -133,6 +133,21 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
         print("viewWillAppear")
    }
     
+    fileprivate func appendButtons() {
+        
+        // Add action to buttons
+        let stackView = popupContainerView.stackView
+        let buttonStackView = popupContainerView.buttonsStackView
+        if buttons.isEmpty {
+            stackView.removeArrangedSubview(popupContainerView.buttonsStackView)
+        }
+        
+        for (index, button) in buttons.enumerated() {
+            buttonStackView.addArrangedSubview(button)
+            button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
+        }
+    }
+    
     @objc private func buttonTapped(_ button: FSPopUpButton) {
         print("buttonTapped")
         //button.action()
