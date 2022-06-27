@@ -154,6 +154,8 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
             buttonStackView.addArrangedSubview(button)
             button.addTarget(self, action: #selector(buttonTapped(_:)), for: .touchUpInside)
         }
+        
+        print(buttons.map(\.allTargets))
     }
     
     @objc private func buttonTapped(_ button: FSPopUpButton) {
