@@ -70,8 +70,11 @@ final class PopUpContainerView: UIView {
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
         buttons.forEach {
+            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonTapped)))
             buttonsStackView.addArrangedSubview($0)
         }
+        
+        buttonsStackView.addArrangedSubview(buttons[0])
         
         buttonsStackView.axis = configuration.axis
         buttonsStackView.spacing = configuration.spacing
