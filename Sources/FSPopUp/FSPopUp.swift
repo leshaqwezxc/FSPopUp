@@ -138,7 +138,7 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
     public override func viewWillAppear(_ animated: Bool) {
        super.viewWillAppear(animated)
         print("viewWillAppear")
-        appendButtons()//
+        //appendButtons()
    }
     
     fileprivate func appendButtons() {
