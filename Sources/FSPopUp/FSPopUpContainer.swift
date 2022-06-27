@@ -69,10 +69,11 @@ final class PopUpContainerView: UIView {
             stackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: 1),
             stackView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
-        buttons.forEach {
-            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonTapped)))
-            buttonsStackView.addArrangedSubview($0)
-        }
+//        buttons.forEach {
+//            $0.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonTapped)))
+//            buttonsStackView.addArrangedSubview($0)
+//        }
+        buttons[0].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(buttonTapped)))
         
         buttonsStackView.addArrangedSubview(buttons[0])
         
