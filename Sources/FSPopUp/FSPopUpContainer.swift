@@ -87,7 +87,7 @@ final class PopUpContainerView: UIView {
         actions.forEach { action in
             let button = View.init(frame: .infinite)
             button.setup(with: action.state)
-            let popUpButton = FSPopUpButton(frame: .zero, contentView: button, action: action.handler)
+            let popUpButton = FSPopUpButton(frame: .infinite, contentView: button, action: action.handler)
             buttonsStackView.addArrangedSubview(popUpButton)
             buttons.append(popUpButton)
             popUpButton.isUserInteractionEnabled = true

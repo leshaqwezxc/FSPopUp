@@ -98,12 +98,12 @@ final public class FSPopUp<Template: UIView & FSStateSetuping, State>: UIViewCon
         transitioningDelegate = presentationManager
         modalPresentationStyle = .custom
         
-        actions.forEach { action in
-                let button = buttonTemplate.init(frame: .zero)
-                button.setup(with: action.state)
-                let popUpButton = FSPopUpButton(frame: .zero, contentView: button, action: action.handler)
-                buttons.append(popUpButton)
-            }
+//        actions.forEach { action in
+//                let button = buttonTemplate.init(frame: .zero)
+//                button.setup(with: action.state)
+//                let popUpButton = FSPopUpButton(frame: .zero, contentView: button, action: action.handler)
+//                buttons.append(popUpButton)
+//            }
         
         interactor.viewController = self
         
